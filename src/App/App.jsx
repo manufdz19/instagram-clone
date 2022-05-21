@@ -1,7 +1,14 @@
-import Login from '../Views/Login';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './Router';
 
 function App() {
-  return <Login />;
+  return (
+    <>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App;

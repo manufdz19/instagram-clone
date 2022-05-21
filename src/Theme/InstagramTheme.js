@@ -3,6 +3,7 @@ import { extendTheme } from '@chakra-ui/react';
 export const InstagramTheme = extendTheme({
   colors: {
     brand: {
+      background: '#fafafa',
       blue: '#0095f6'
     },
   },

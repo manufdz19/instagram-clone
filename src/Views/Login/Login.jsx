@@ -1,16 +1,17 @@
-import { Box, Button, Divider, Fade, Flex, FormControl, Image, Input, InputGroup, InputRightElement, Link, Text } from '@chakra-ui/react';
+import { Box, Button, Divider, Flex, FormControl, Image, Input, InputGroup, InputRightElement, Link, Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import login from '../Assets/login.png';
-import login_1 from '../Assets/login_1.png';
-import login_2 from '../Assets/login_2.png';
-import login_3 from '../Assets/login_3.png';
-import login_instagram from '../Assets/login_instagram.png';
-import facebook from '../Assets/facebook.png';
-import app_store from '../Assets/app_store.png';
-import google_play from '../Assets/google_play.png';
-import { motion } from 'framer-motion';
+import login from '../../Assets/login.png';
+import login_1 from '../../Assets/login_1.png';
+import login_2 from '../../Assets/login_2.png';
+import login_3 from '../../Assets/login_3.png';
+import login_instagram from '../../Assets/login_instagram.png';
+import facebook from '../../Assets/facebook.png';
+import app_store from '../../Assets/app_store.png';
+import google_play from '../../Assets/google_play.png';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
   const [index, setIndex] = useState(1);
@@ -32,8 +33,8 @@ const Login = () => {
   return (
     <Flex
       minH='100vh'
-      overflow='hidden'
-      backgroundColor='#fafafa'
+      overflowY='scroll'
+      backgroundColor='brand.background'
       flexDirection='column'
     >
       <Flex 
@@ -209,6 +210,10 @@ const Login = () => {
                   color='#00376b'
                   fontSize='12px'
                   textAlign='center'
+                  _hover={{
+                    cursor: 'pointer',
+                  }}
+                  onClick={ () => navigate('/password/reset') }
                 >
                   ¿Has olvidado la contraseña?
                 </Text>
