@@ -1,4 +1,4 @@
-This project was created with Next JS
+This project was created with Vite.
 # instagram-clone
 
 In the project directory, you can run:
