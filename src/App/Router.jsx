@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import Header from '../Layout/Header/Header';
+import Home from '../Views/Home/Home';
 import Login from '../Views/Login/Login';
 import ResetPassword from '../Views/ResetPassword/ResetPassword';
 
@@ -23,7 +24,7 @@ const LayoutRoute = () => {
       <Box backgroundColor='brand.background'>
         <Routes>
           {/* Home route */}
-          <Route path='/home' element={<></>} />
+          <Route path='/home' element={<Home />} />
         </Routes>
       </Box>
     </Box>

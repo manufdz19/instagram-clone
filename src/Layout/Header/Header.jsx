@@ -60,7 +60,22 @@ const Header = ({ hasOptions, hasSearch, ...props }) => {
                 pointerEvents='none'
                 children={<Search2Icon color='#8e8e8e' />}
               />
-              <Input h='36px' type='tel' placeholder='Busca' />
+              <Input
+                h='36px'
+                type='tel'
+                _placeholder={{
+                  opacity: 1,
+                  color: '#8e8e8e',
+                  lineHeight: '25px',
+                  fontWeight: '300',
+                  fontSize: '16px',
+                }}
+                placeholder='Busca'
+                border='none'
+                _focus={{
+                  boxShadow: 'none',
+                }}
+              />
             </InputGroup>
           </Flex>
         )}
@@ -72,11 +87,15 @@ const Header = ({ hasOptions, hasSearch, ...props }) => {
             position='relative'
             pl='27px'
           >
-            <Image src={ICON_HOME} ml='27px' />
-            <Image src={ICON_DIRECT} ml='22px' />
-            <Image src={ICON_ADD} ml='22px' />
-            <Image src={ICON_DISCOVER} ml='22px' />
-            <Image src={ICON_LIKE} ml='22px' />
+            <Image src={ICON_HOME} ml='27px' _hover={{ cursor: 'pointer' }} />
+            <Image src={ICON_DIRECT} ml='22px' _hover={{ cursor: 'pointer' }} />
+            <Image src={ICON_ADD} ml='22px' _hover={{ cursor: 'pointer' }} />
+            <Image
+              src={ICON_DISCOVER}
+              ml='22px'
+              _hover={{ cursor: 'pointer' }}
+            />
+            <Image src={ICON_LIKE} ml='22px' _hover={{ cursor: 'pointer' }} />
             <Menu>
               <MenuButton ml='22px'>
                 <Avatar src={user.avatar} h='24px' w='24px' />

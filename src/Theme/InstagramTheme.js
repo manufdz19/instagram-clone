@@ -42,4 +42,11 @@ export const InstagramTheme = extendTheme({
       },
     },
   },
+  Input: {
+    baseStyle: {
+      _focus: {
+        boxShadow: 'none',
+      },
+    },
+  },
 });
