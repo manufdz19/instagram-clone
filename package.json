@@ -12,14 +12,14 @@
     "@chakra-ui/react": "^2.0.2",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@reduxjs/toolkit": "^1.8.0",
+    "@reduxjs/toolkit": "^1.8.2",
     "framer-motion": "^6.3.3",
     "moment": "^2.29.3",
     "phosphor-react": "^1.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-hook-form": "^7.31.2",
-    "react-redux": "^7.2.6",
+    "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
