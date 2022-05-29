@@ -5,6 +5,7 @@ import { AuthContext } from '../Context/AuthContext';
 import Header from '../Layout/Header/Header';
 import Home from '../Views/Home/Home';
 import Login from '../Views/Login/Login';
+import Profile from '../Views/Profile/Profile';
 import ResetPassword from '../Views/ResetPassword/ResetPassword';
 
 const HandleRoute = ({ component: Component, type = 'public' }) => {
@@ -19,12 +20,15 @@ const HandleRoute = ({ component: Component, type = 'public' }) => {
 
 const LayoutRoute = () => {
   return (
-    <Box minH='100vh' overflowY='scroll'>
+    <Box minH='100vh'>
       <Header hasOptions hasSearch />
       <Box backgroundColor='brand.background'>
         <Routes>
           {/* Home route */}
           <Route path='/home' element={<Home />} />
+
+          {/* Profile route */}
+          <Route path='/:username' element={<Profile />} />
         </Routes>
       </Box>
     </Box>

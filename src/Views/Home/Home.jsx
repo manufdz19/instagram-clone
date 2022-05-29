@@ -1,11 +1,15 @@
 import { Avatar, Box, Flex, Text } from '@chakra-ui/react';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PostCard from '../../Components/PostCard';
 import UserAvatarStory from '../../Components/UserAvatarStory';
 import UserCard from '../../Components/UserCard';
 import { AuthContext } from '../../Context/AuthContext';
+import { POSTS } from '../../Mocks/PostsMocks';
 import { USERS } from '../../Mocks/UsersMocks';
 
 const Home = () => {
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
   return (
@@ -18,13 +22,14 @@ const Home = () => {
       position='relative'
       margin='0 auto'
       pt='30px'
+      overflowY='hidden'
     >
       {/* LEFT PANEL */}
       <Flex float='left' mr='28px' maxW='614px' w='100%' flexDirection='column'>
         <Flex
           bgColor='white'
           border='1px solid #dbdbdb'
-          borderRadius='3px'
+          borderRadius='8px'
           padding='16px 16px'
           mb='30px'
           h='119px'
@@ -57,15 +62,9 @@ const Home = () => {
           ))}
         </Flex>
 
-        <Box
-          bgColor='white'
-          border='1px solid #dbdbdb'
-          borderRadius='3px'
-          padding='16px 0'
-          mb='24px'
-          h='119px'
-          w='100%'
-        ></Box>
+        {POSTS.map((post) => {
+          return <PostCard key={post.id} post={post} />;
+        })}
       </Flex>
 
       {/* RIGTH PANEL */}
@@ -78,7 +77,12 @@ const Home = () => {
           flex='0 0 auto'
           mb='17px'
         >
-          <Box>
+          <Box
+            _hover={{
+              cursor: 'pointer',
+            }}
+            onClick={() => navigate(`/${user.username}`)}
+          >
             <Avatar src={user.avatar} h='56px' w='56px' />
           </Box>
           <Box p='12px 18px'>
@@ -90,6 +94,7 @@ const Home = () => {
               _hover={{
                 cursor: 'pointer',
               }}
+              onClick={() => navigate(`/${user.username}`)}
             >
               {user.username}
             </Text>

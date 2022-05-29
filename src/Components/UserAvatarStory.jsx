@@ -6,6 +6,7 @@ const UserAvatarStory = ({ avatar, username, ...props }) => {
       position='relative'
       flexDirection='column'
       w='100%'
+      maxW='66px'
       alignItems='center'
       mr='15px'
       {...props}

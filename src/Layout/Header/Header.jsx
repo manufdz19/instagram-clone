@@ -87,7 +87,12 @@ const Header = ({ hasOptions, hasSearch, ...props }) => {
             position='relative'
             pl='27px'
           >
-            <Image src={ICON_HOME} ml='27px' _hover={{ cursor: 'pointer' }} />
+            <Image
+              src={ICON_HOME}
+              ml='27px'
+              _hover={{ cursor: 'pointer' }}
+              onClick={() => navigate('/')}
+            />
             <Image src={ICON_DIRECT} ml='22px' _hover={{ cursor: 'pointer' }} />
             <Image src={ICON_ADD} ml='22px' _hover={{ cursor: 'pointer' }} />
             <Image
@@ -101,7 +106,11 @@ const Header = ({ hasOptions, hasSearch, ...props }) => {
                 <Avatar src={user.avatar} h='24px' w='24px' />
               </MenuButton>
               <MenuList left={0} width='230px' p='0'>
-                <MenuItem p='8px 16px' gap='10px'>
+                <MenuItem
+                  p='8px 16px'
+                  gap='10px'
+                  onClick={() => navigate(`${user.username}`)}
+                >
                   <Image src={ICON_PROFILE} />
                   <Text
                     w='170px'

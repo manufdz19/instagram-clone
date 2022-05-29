@@ -1,7 +1,9 @@
 import { Avatar, Box, Flex, Text } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import logos from '../Assets/logos.png';
 
 const UserCard = ({ avatar, username, name, verified, ...props }) => {
+  const navigate = useNavigate();
   return (
     <Flex
       h='auto'
@@ -24,7 +26,9 @@ const UserCard = ({ avatar, username, name, verified, ...props }) => {
               color='#262626'
               _hover={{
                 cursor: 'pointer',
+                textDecoration: 'underline',
               }}
+              onClick={() => navigate(`/${username}`)}
             >
               {username}
             </Text>
